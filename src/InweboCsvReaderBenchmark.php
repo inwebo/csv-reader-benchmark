@@ -16,8 +16,6 @@ use PhpBench\Attributes as Bench;
  * ParamProviders entirely.
  */
 #[Bench\BeforeMethods('setUp')]
-#[Bench\Revs(10)]
-#[Bench\Iterations(5)]
 #[Bench\Warmup(1)]
 #[Bench\OutputTimeUnit('milliseconds')]
 #[Bench\Groups(['config_linters'])]

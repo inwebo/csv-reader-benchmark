@@ -22,11 +22,10 @@
     ],
     "minimum-stability": "stable",
     "scripts": {
-      "generate":       "php generate.php",
-      "bench":          "vendor/bin/phpbench run --report=csv_report",
-      "bench:inwebo":   "vendor/bin/phpbench run --filter=InweboCsvReaderBenchmark --report=config_linters --output=html",
-      "bench:league":   "vendor/bin/phpbench run --filter=LeagueCsvBenchmark --report=csv_report",
-      "bench:store":    "vendor/bin/phpbench run --report=csv_report --store",
-      "bench:html": "vendor/bin/phpbench run --report=csv_report --output=html"
+      "generate":       "php -d max_execution_time=0 generate.php",
+      "bench":          "php -d max_execution_time=0 vendor/bin/phpbench run --report=report_plot --output=html",
+      "bench:inwebo":   "vendor/bin/phpbench run --filter=InweboCsvReaderBenchmark --report=report_plot --output=html",
+      "bench:league":   "vendor/bin/phpbench run --filter=LeagueCsvBenchmark --report=report_plot",
+      "bench:store":    "vendor/bin/phpbench run --report=report_plot --store"
     }
 }

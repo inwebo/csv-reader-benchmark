@@ -15,8 +15,6 @@ use PhpBench\Attributes as Bench;
  * so results are directly comparable.
  */
 #[Bench\BeforeMethods('setUp')]
-#[Bench\Revs(10)]
-#[Bench\Iterations(5)]
 #[Bench\Warmup(1)]
 #[Bench\OutputTimeUnit('milliseconds')]
 class LeagueCsvBenchmark extends AbstractCsvBench

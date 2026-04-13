@@ -1,65 +1,116 @@
 {
-    "$schema": "vendor/phpbench/phpbench/phpbench.schema.json",
-    "runner.bootstrap": "vendor/autoload.php",
-    "runner.path": "src",
-    "runner.php_config": {
-        "memory_limit": "1024M"
-    },
-    "report.generators": {
-      "config_linters": {
-        "title": "Linter comparison",
-        "description": "Compares different implementations of the PHPBench config linter",
-        "generator": "component",
-        "filter": "contains(subject_groups, 'config_linters')",
-        "components": [
-          {
-            "component": "bar_chart_aggregate",
-            "x_partition": "'JSON Scale ' ~ variant_params[0]",
-            "bar_partition": "benchmark_name",
-            "y_expr": "mode(partition['result_time_avg']) as time",
-            "y_axes_label": "yValue as time"
-          },
-          {
-            "component": "section",
-            "tabbed": true,
-            "partition": ["benchmark_name"],
-            "components": [
-              {
-                "title": "{{ first(frame['benchmark_name']) }}",
-                "component": "table_aggregate",
-                "partition": ["variant_name"],
-                "row": {
-                  "variant": "'JSON Scale ' ~ first(partition['variant_params'][0])",
-                  "memory": "first(partition['result_mem_peak']) as memory",
-                  "min": "min(partition['result_time_avg']) as time",
-                  "max": "max(partition['result_time_avg']) as time",
-                  "mode": "mode(partition['result_time_avg']) as time",
-                  "rstdev": "rstdev(partition['result_time_avg'])",
-                  "stdev": "stdev(partition['result_time_avg']) as time"
+  "$schema": "vendor/phpbench/phpbench/phpbench.schema.json",
+  "runner.bootstrap": "vendor/autoload.php",
+  "runner.path": "src",
+  "runner.php_config": {
+    "memory_limit": "512M"
+  },
+  "runner.revs": 8,
+  "runner.iterations": 4,
+  "report.generators": {
+    "report_plot": {
+      "title": "inwebo/csv-reader vs league/csv",
+      "description": "Performance comparison — 4 scenarios × 3 file sizes",
+      "generator": "component",
+      "components": [
+        {
+          "component": "bar_chart_aggregate",
+          "title": "Execution time by scenario",
+          "x_partition": "subject_name",
+          "bar_partition": "benchmark_name",
+          "y_expr": "mode(partition['result_time_avg']) as time",
+          "y_axes_label": "yValue as time"
+        },
+        {
+          "component": "bar_chart_aggregate",
+          "title": "Memory consumption by scenario",
+          "x_partition": "subject_name",
+          "bar_partition": "benchmark_name",
+          "y_expr": "mode(partition['result_mem_peak']) as memory",
+          "y_axes_label": "yValue as memory"
+        },
+        {
+          "component": "section",
+          "tabbed": true,
+          "partition": [
+            "subject_name"
+          ],
+          "components": [
+            {
+              "title": "{{ first(frame['subject_name']) }}",
+              "component": "section",
+              "components": [
+                {
+                  "component": "bar_chart_aggregate",
+                  "title": "Time Comparison (ms)",
+                  "x_partition": "variant_name",
+                  "bar_partition": "benchmark_name",
+                  "y_expr": "mode(partition['result_time_avg']) as time",
+                  "y_axes_label": "yValue as time"
+                },
+                {
+                  "component": "bar_chart_aggregate",
+                  "title": "Memory Comparison (bytes)",
+                  "x_partition": "variant_name",
+                  "bar_partition": "benchmark_name",
+                  "y_expr": "mode(partition['result_mem_peak']) as memory",
+                  "y_axes_label": "yValue as memory"
+                },
+                {
+                  "title": "Detailed stats",
+                  "component": "table_aggregate",
+                  "partition": [
+                    "benchmark_name",
+                    "variant_name"
+                  ],
+                  "row": {
+                    "library": "first(partition['benchmark_name'])",
+                    "file_size": "first(partition['variant_name'])",
+                    "memory": "first(partition['result_mem_peak']) as memory",
+                    "min": "min(partition['result_time_avg']) as time",
+                    "mode": "mode(partition['result_time_avg']) as time",
+                    "max": "max(partition['result_time_avg']) as time",
+                    "rstdev": "rstdev(partition['result_time_avg']) "
+                  }
+                },
+                {
+                  "title": "Variant Comparison",
+                  "component": "section",
+                  "partition": [
+                    "variant_name"
+                  ],
+                  "components": [
+                    {
+                      "title": "Variant Comparison (Time %)",
+                      "component": "table_aggregate",
+                      "partition": [
+                        "variant_name"
+                      ],
+                      "row": {
+                        "variant": "first(partition['variant_name'])",
+                        "library": "first(partition['benchmark_name'])",
+                        "diff": "percent_diff(max(frame['result_time_avg']), min(frame['result_time_avg']))"
+                      }
+                    },
+                    {
+                      "title": "Memory % ({{ first(frame['variant_name']) }})",
+                      "component": "table_aggregate",
+                      "partition": [
+                        "variant_name"
+                      ],
+                      "row": {
+                        "variant": "first(frame['variant_name'])",
+                        "library": "first(partition['benchmark_name'])",
+                        "diff": "percent_diff(max(partition['result_mem_peak']), first(frame['result_mem_peak']))"
+                      }
+                    }
+                  ]
                 }
-              }
-            ]
-          }
-        ]
-      },
-        "csv_report": {
-            "extends": "aggregate",
-            "break": ["benchmark", "subject"],
-            "cols": [
-                "benchmark",
-                "subject",
-                "set",
-                "revs",
-                "its",
-                "mem_peak",
-                "best",
-                "mean",
-                "mode",
-                "worst",
-                "stdev",
-                "rstdev"
-            ],
-            "title": "inwebo/csv-reader vs league/csv"
+              ]
+            }
+          ]
         }
+      ]
     }
+  }
 }
