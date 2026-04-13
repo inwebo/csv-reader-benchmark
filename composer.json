@@ -1,0 +1,32 @@
+{
+    "name": "inwebo/benchmark-csv-reader",
+    "description": "PHP csv readers benchmark : inwebo/csv-reader VS league/csv",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "inwebo/csv-reader": "^1.0",
+        "league/csv": "^9.28",
+        "phpbench/phpbench": "^1.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Inwebo\\BenchmarkCsvReader\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "inwebo",
+            "email": "github@inwebo.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+      "generate":       "php generate.php",
+      "bench":          "vendor/bin/phpbench run --report=csv_report",
+      "bench:inwebo":   "vendor/bin/phpbench run --filter=InweboCsvReaderBenchmark --report=config_linters --output=html",
+      "bench:league":   "vendor/bin/phpbench run --filter=LeagueCsvBenchmark --report=csv_report",
+      "bench:store":    "vendor/bin/phpbench run --report=csv_report --store",
+      "bench:html": "vendor/bin/phpbench run --report=csv_report --output=html"
+    }
+}
