@@ -5,8 +5,8 @@
   "runner.php_config": {
     "memory_limit": "512M"
   },
-  "runner.revs": 8,
-  "runner.iterations": 4,
+  "runner.revs": 1,
+  "runner.iterations": 1,
   "report.generators": {
     "report_plot": {
       "title": "inwebo/csv-reader vs league/csv",
@@ -15,7 +15,7 @@
       "components": [
         {
           "component": "bar_chart_aggregate",
-          "title": "Execution time by scenario",
+          "title": "Execution time by scenario (ms)",
           "x_partition": "subject_name",
           "bar_partition": "benchmark_name",
           "y_expr": "mode(partition['result_time_avg']) as time",
@@ -35,6 +35,7 @@
           "partition": [
             "subject_name"
           ],
+          "tab_labels": ["Read CSV file", "Filter CSV File", "Normalize CSV File", "Read large CSV file (6.1 Mo)"],
           "components": [
             {
               "title": "{{ first(frame['subject_name']) }}",
@@ -64,13 +65,13 @@
                     "variant_name"
                   ],
                   "row": {
-                    "library": "first(partition['benchmark_name'])",
-                    "file_size": "first(partition['variant_name'])",
-                    "memory": "first(partition['result_mem_peak']) as memory",
-                    "min": "min(partition['result_time_avg']) as time",
-                    "mode": "mode(partition['result_time_avg']) as time",
-                    "max": "max(partition['result_time_avg']) as time",
-                    "rstdev": "rstdev(partition['result_time_avg']) "
+                    "Library": "first(partition['benchmark_name'])",
+                    "Variant": "first(partition['variant_name'])",
+                    "Peak memory": "first(partition['result_mem_peak']) as memory",
+                    "Min time": "min(partition['result_time_avg']) as time",
+                    "Average time": "mode(partition['result_time_avg']) as time",
+                    "Max time": "max(partition['result_time_avg']) as time",
+                    "Relative standard deviation": "rstdev(partition['result_time_avg']) "
                   }
                 },
                 {
@@ -87,9 +88,9 @@
                         "variant_name"
                       ],
                       "row": {
-                        "variant": "first(partition['variant_name'])",
-                        "library": "first(partition['benchmark_name'])",
-                        "diff": "percent_diff(max(frame['result_time_avg']), min(frame['result_time_avg']))"
+                        "Library": "first(partition['benchmark_name'])",
+                        "Variant": "first(partition['variant_name'])",
+                        "Difference": "percent_diff(max(frame['result_time_avg']), min(frame['result_time_avg']))"
                       }
                     },
                     {
@@ -99,9 +100,9 @@
                         "variant_name"
                       ],
                       "row": {
-                        "variant": "first(frame['variant_name'])",
-                        "library": "first(partition['benchmark_name'])",
-                        "diff": "percent_diff(max(partition['result_mem_peak']), first(frame['result_mem_peak']))"
+                        "Library": "first(partition['benchmark_name'])",
+                        "Variant": "first(frame['variant_name'])",
+                        "Difference": "percent_diff(max(partition['result_mem_peak']), first(frame['result_mem_peak']))"
                       }
                     }
                   ]
