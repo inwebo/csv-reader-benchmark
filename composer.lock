@@ -166,12 +166,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/inwebo/csv-reader.git",
-                "reference": "9b74cd473c7894dc2bd41e0af75cc7f99b90cfd9"
+                "reference": "0124ed4e05b96fc5fb20268105c350a82d4e46df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inwebo/csv-reader/zipball/9b74cd473c7894dc2bd41e0af75cc7f99b90cfd9",
-                "reference": "9b74cd473c7894dc2bd41e0af75cc7f99b90cfd9",
+                "url": "https://api.github.com/repos/inwebo/csv-reader/zipball/0124ed4e05b96fc5fb20268105c350a82d4e46df",
+                "reference": "0124ed4e05b96fc5fb20268105c350a82d4e46df",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
                 "issues": "https://github.com/inwebo/csv-reader/issues",
                 "source": "https://github.com/inwebo/csv-reader/tree/1.0.0"
             },
-            "time": "2026-04-12T15:54:18+00:00"
+            "time": "2026-04-13T19:11:57+00:00"
         },
         {
             "name": "league/csv",

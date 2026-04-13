@@ -2,6 +2,16 @@
 
 Powered by [PHPBench](https://phpbench.readthedocs.io/).
 
+[See the results](https://inwebo.github.io/csv-reader-benchmark/) on GitHub Pages.
+
+## Benchmark Conclusions
+
+The comparison between [inwebo/csv-reader](https://github.com/inwebo/csv-reader) and `league/csv` shows significant performance differences:
+
+- **Execution Time**:  [inwebo/csv-reader](https://github.com/inwebo/csv-reader) is consistently faster across all scenarios. For the large file scenario (`benchLargeFile`), it is approximately **38% faster** than `league/csv`.
+- **Memory Consumption**:  [inwebo/csv-reader](https://github.com/inwebo/csv-reader) maintains a much lower and more stable memory footprint. It uses about **745 KB** regardless of the scenario, while `league/csv` consumes between **971 KB and 1.3 MB**, making Inwebo's solution significantly more memory-efficient (up to **42% less memory** used in filtering scenarios).
+- **Scalability**: As the file size increases,  [inwebo/csv-reader](https://github.com/inwebo/csv-reader) demonstrates better scalability in both time and memory.
+
 ## Installation
 
 ```bash
@@ -68,11 +78,11 @@ vendor/bin/phpbench run --filter=benchBasicRead --report=csv_report
 
 PHPBench settings are in `phpbench.json`. Key defaults:
 
-| Setting    | Value          | Description                        |
-|------------|----------------|------------------------------------|
-| `Revs`     | 10             | Executions per iteration           |
-| `Iterations` | 5            | Number of measurement iterations   |
-| `Warmup`   | 1              | Warmup iteration (discarded)       |
-| `TimeUnit` | milliseconds   | Output unit for time columns       |
+| Setting    | Value        | Description                        |
+|------------|--------------|------------------------------------|
+| `Revs`     | 8            | Executions per iteration           |
+| `Iterations` | 4            | Number of measurement iterations   |
+| `Warmup`   | 1            | Warmup iteration (discarded)       |
+| `TimeUnit` | milliseconds | Output unit for time columns       |
 
 Increase `Revs` and `Iterations` in the benchmark classes for more stable results on fast machines.

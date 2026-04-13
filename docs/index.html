@@ -1,0 +1,1332 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PHPBench Report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body class="container">
+                <h1>PHPBench Report</h1>
+        <hr/>
+                    <div>
+            <h2>inwebo/csv-reader vs league/csv</h2>
+                <p>Performance comparison — 4 scenarios × 3 file sizes</p>
+                            <div id="phpbench-component-4" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [23411.553228962817,22151.852837573395,22520.813307240685,410305.2682974586],
+        type: 'bar',
+            },
+        {
+        x: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        name: 'LeagueCsvBenchmark',
+        y: [34659.04540117416,43589.57788649708,40948.19471624268,600021.5442270065],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,60002.15442270065,120004.3088454013,180006.46326810197,240008.6176908026,300010.77211350325,360012.92653620394,420015.0809589046,480017.2353816052,540019.3898043059,600021.5442270065],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","60.002<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","120.004<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","180.006<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","240.009<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","300.011<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","360.013<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","420.015<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","480.017<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","540.019<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","600.022<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        ticktext: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+    }
+};
+layout.title = "Execution time by scenario (ms)";
+Plotly.newPlot(document.getElementById('phpbench-component-4'), data, layout);
+</script>
+                    <div id="phpbench-component-9" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [741808,741808,741824,741808],
+        type: 'bar',
+            },
+        {
+        x: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        name: 'LeagueCsvBenchmark',
+        y: [968656,1296120,968664,968656],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,129612,259224,388836,518448,648060,777672,907284,1036896,1166508,1296120],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","129.612<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","259.224<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","388.836<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","518.448<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","648.060<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","777.672<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","907.284<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.037<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.167<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.296<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+        ticktext: ["benchBasicRead","benchFiltering","benchNormalization","benchLargeFile"],
+    }
+};
+layout.title = "Memory consumption by scenario";
+Plotly.newPlot(document.getElementById('phpbench-component-9'), data, layout);
+</script>
+                    <div>
+                    <ul class="nav nav-tabs" id="tab-group-phpbench-component-16" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link active" 
+                        id="tab-button-phpbench-component-16-0" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-16-0" 
+                        aria-controls="#tab-content-phpbench-component-16-0" 
+                        aria-current="page" 
+                        >
+                        Read CSV file                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-16-1" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-16-1" 
+                        aria-controls="#tab-content-phpbench-component-16-1" 
+                        aria-current="page" 
+                        >
+                        Filter CSV File                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-16-2" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-16-2" 
+                        aria-controls="#tab-content-phpbench-component-16-2" 
+                        aria-current="page" 
+                        >
+                        Normalize CSV File                    </button>
+                </li>
+                                            <li class="nav-item" role="presentation">
+                    <button 
+                        class="nav-link " 
+                        id="tab-button-phpbench-component-16-3" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#tab-content-phpbench-component-16-3" 
+                        aria-controls="#tab-content-phpbench-component-16-3" 
+                        aria-current="page" 
+                        >
+                        Read large CSV file (6.1 Mo)                    </button>
+                </li>
+                                    </ul>
+                <div class="tab-content">
+                  <div
+              class="tab-pane show active" 
+              id="tab-content-phpbench-component-16-0" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-16-0"
+          >
+<br/>
+              <div>
+            <h2>benchBasicRead</h2>
+                                <div id="phpbench-component-18" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [3921.0634050880544,43216.53131115349,437021.62661447696],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [6388.144031311008,62444.00254403192,664219.090998032],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,66421.9090998032,132843.8181996064,199265.72729940963,265687.6363992128,332109.545499016,398531.45459881925,464953.36369862244,531375.2727984256,597797.1818982288,664219.090998032],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","66.422<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","132.844<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","199.266<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","265.688<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","332.110<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","398.531<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","464.953<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","531.375<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","597.797<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","664.219<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Time Comparison (ms)";
+Plotly.newPlot(document.getElementById('phpbench-component-18'), data, layout);
+</script>
+                    <div id="phpbench-component-19" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [741808,741808,741808],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [968656,968656,968656],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,96865.6,193731.2,290596.80000000005,387462.4,484328,581193.6000000001,678059.2000000001,774924.8,871790.4,968656],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","96.866<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","193.731<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","290.597<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","387.462<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","484.328<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","581.194<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","678.059<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","774.925<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","871.790<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","968.656<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Memory Comparison (bytes)";
+Plotly.newPlot(document.getElementById('phpbench-component-19'), data, layout);
+</script>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Detailed stats</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Peak memory</th>
+                            <th>Min time</th>
+                            <th>Average time</th>
+                            <th>Max time</th>
+                            <th>Relative standard deviation</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>3.687<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>3.921<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>4.727<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #140000">
+    <span style="color: #555; font-weight: bold;">±</span>
+8.63%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>38.521<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>43.217<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>43.974<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+5.18%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>421.194<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>437.022<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>461.837<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #070000">
+    <span style="color: #555; font-weight: bold;">±</span>
+3.40%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>968.656<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>6.070<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>6.388<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>6.466<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #050000">
+    <span style="color: #555; font-weight: bold;">±</span>
+2.39%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>968.656<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>57.896<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>62.444<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>65.491<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0a0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+4.26%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>968.656<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>603.112<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>664.219<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>670.120<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0a0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+4.37%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <div>
+            <h2>Variant Comparison</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #1e861e">
+    -42.98%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Small C.S.V. file (~55 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #1e841e">
+    -41.18%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Medium C.S.V. file (~584 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #207c20">
+    -37.15%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Large C.S.V. file (~6.1 Mo))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+            </div>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-16-1" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-16-1"
+          >
+<br/>
+              <div>
+            <h2>benchFiltering</h2>
+                                <div id="phpbench-component-107" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [3772.7156555772526,40607.99902152762,405459.6209393369],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [7713.805283757348,76468.6835616435,790690.3506849357],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,79069.03506849357,158138.07013698714,237207.1052054807,316276.1402739743,395345.17534246785,474414.2104109614,553483.245479455,632552.2805479486,711621.3156164421,790690.3506849357],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","79.069<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","158.138<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","237.207<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","316.276<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","395.345<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","474.414<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","553.483<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","632.552<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","711.621<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","790.690<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Time Comparison (ms)";
+Plotly.newPlot(document.getElementById('phpbench-component-107'), data, layout);
+</script>
+                    <div id="phpbench-component-108" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [741808,741808,741808],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [1296120,1296120,1296120],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,129612,259224,388836,518448,648060,777672,907284,1036896,1166508,1296120],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","129.612<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","259.224<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","388.836<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","518.448<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","648.060<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","777.672<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","907.284<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","1.037<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.167<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n","1.296<span style=\"color: #555; font-weight: bold;\">mb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Memory Comparison (bytes)";
+Plotly.newPlot(document.getElementById('phpbench-component-108'), data, layout);
+</script>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Detailed stats</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Peak memory</th>
+                            <th>Min time</th>
+                            <th>Average time</th>
+                            <th>Max time</th>
+                            <th>Relative standard deviation</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>3.552<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>3.773<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>3.844<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #050000">
+    <span style="color: #555; font-weight: bold;">±</span>
+2.90%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>37.909<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>40.608<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>41.132<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #070000">
+    <span style="color: #555; font-weight: bold;">±</span>
+3.09%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>393.981<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>405.460<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>435.580<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #070000">
+    <span style="color: #555; font-weight: bold;">±</span>
+3.91%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>1.296<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>7.522<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>7.714<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>8.446<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0a0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+4.10%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>1.296<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>75.456<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>76.469<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>83.297<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #070000">
+    <span style="color: #555; font-weight: bold;">±</span>
+3.61%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>1.296<span style="color: #555; font-weight: bold;">mb</span>
+</td>
+            <td>780.107<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>790.690<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>845.267<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #050000">
+    <span style="color: #555; font-weight: bold;">±</span>
+2.93%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <div>
+            <h2>Variant Comparison</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #16a516">
+    -57.94%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Small C.S.V. file (~55 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #1e861e">
+    -42.77%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #179f17">
+    -54.49%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Medium C.S.V. file (~584 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #1e861e">
+    -42.77%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #189d18">
+    -53.39%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Large C.S.V. file (~6.1 Mo))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #1e861e">
+    -42.77%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+            </div>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-16-2" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-16-2"
+          >
+<br/>
+              <div>
+            <h2>benchNormalization</h2>
+                                <div id="phpbench-component-194" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [4073.121722113447,40492.050097847605,403521.3861056854],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [7071.791780821836,71884.29863013653,709698.9193737762],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,70969.89193737762,141939.78387475523,212909.67581213283,283879.56774951046,354849.4596868881,425819.35162426566,496789.2435616433,567759.1354990209,638729.0274363986,709698.9193737762],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","70.970<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","141.940<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","212.910<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","283.880<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","354.849<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","425.819<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","496.789<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","567.759<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","638.729<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","709.699<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Time Comparison (ms)";
+Plotly.newPlot(document.getElementById('phpbench-component-194'), data, layout);
+</script>
+                    <div id="phpbench-component-195" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [741824,741824,741824],
+        type: 'bar',
+            },
+        {
+        x: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [968664,968664,968664],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,96866.4,193732.8,290599.19999999995,387465.6,484332,581198.3999999999,678064.7999999999,774931.2,871797.6,968664],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","96.866<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","193.733<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","290.599<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","387.466<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","484.332<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","581.198<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","678.065<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","774.931<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","871.798<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","968.664<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Small C.S.V. file (~55 ko)","Medium C.S.V. file (~584 ko)","Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Memory Comparison (bytes)";
+Plotly.newPlot(document.getElementById('phpbench-component-195'), data, layout);
+</script>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Detailed stats</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Peak memory</th>
+                            <th>Min time</th>
+                            <th>Average time</th>
+                            <th>Max time</th>
+                            <th>Relative standard deviation</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>741.824<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>3.673<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>4.073<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>4.302<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+5.49%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>741.824<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>37.969<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>40.492<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>43.045<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0a0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+4.24%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>741.824<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>390.162<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>403.521<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>404.970<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #020000">
+    <span style="color: #555; font-weight: bold;">±</span>
+1.46%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td>968.664<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>6.806<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>7.072<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>7.394<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #050000">
+    <span style="color: #555; font-weight: bold;">±</span>
+2.86%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td>968.664<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>68.073<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>71.884<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>79.666<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0f0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+6.09%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>968.664<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>701.418<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>709.699<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>799.829<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+5.34%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <div>
+            <h2>Variant Comparison</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #1a961a">
+    -50.32%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Small C.S.V. file (~55 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Small C.S.V. file (~55 ko)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #189b18">
+    -52.34%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Medium C.S.V. file (~584 ko))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Medium C.S.V. file (~584 ko)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #199919">
+    -51.22%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Large C.S.V. file (~6.1 Mo))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+            </div>
+          </div>
+                            <div
+              class="tab-pane " 
+              id="tab-content-phpbench-component-16-3" 
+              role="tabpanel" 
+              aria-labelledby="tab-button-phpbench-component-16-3"
+          >
+<br/>
+              <div>
+            <h2>benchLargeFile</h2>
+                                <div id="phpbench-component-281" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [410305.2682974586],
+        type: 'bar',
+            },
+        {
+        x: ["Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [600021.5442270065],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,60002.15442270065,120004.3088454013,180006.46326810197,240008.6176908026,300010.77211350325,360012.92653620394,420015.0809589046,480017.2353816052,540019.3898043059,600021.5442270065],
+        ticktext: ["0.000<span style=\"color: #555; font-weight: bold;\">\u03bcs<\/span>\n","60.002<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","120.004<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","180.006<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","240.009<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","300.011<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","360.013<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","420.015<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","480.017<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","540.019<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n","600.022<span style=\"color: #555; font-weight: bold;\">ms<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Time Comparison (ms)";
+Plotly.newPlot(document.getElementById('phpbench-component-281'), data, layout);
+</script>
+                    <div id="phpbench-component-282" width="400" height="100"></div>
+<script>
+var data = [
+        {
+        x: ["Large C.S.V. file (~6.1 Mo)"],
+        name: 'InweboCsvReaderBenchmark',
+        y: [741808],
+        type: 'bar',
+            },
+        {
+        x: ["Large C.S.V. file (~6.1 Mo)"],
+        name: 'LeagueCsvBenchmark',
+        y: [968656],
+        type: 'bar',
+            },
+    ]
+var layout = {
+    barmode: 'group',
+    yaxis: {
+        tickmode: 'array',
+        tickvals: [0,96865.6,193731.2,290596.80000000005,387462.4,484328,581193.6000000001,678059.2000000001,774924.8,871790.4,968656],
+        ticktext: ["0<span style=\"color: #555; font-weight: bold;\">b<\/span>\n","96.866<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","193.731<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","290.597<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","387.462<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","484.328<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","581.194<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","678.059<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","774.925<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","871.790<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n","968.656<span style=\"color: #555; font-weight: bold;\">kb<\/span>\n"]    },
+    xaxis: {
+        tickmode: 'array',
+        tickvals: ["Large C.S.V. file (~6.1 Mo)"],
+        ticktext: ["Large C.S.V. file (~6.1 Mo)"],
+    }
+};
+layout.title = "Memory Comparison (bytes)";
+Plotly.newPlot(document.getElementById('phpbench-component-282'), data, layout);
+</script>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Detailed stats</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=7></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Peak memory</th>
+                            <th>Min time</th>
+                            <th>Average time</th>
+                            <th>Max time</th>
+                            <th>Relative standard deviation</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>741.808<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>398.762<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>410.305<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>431.716<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #050000">
+    <span style="color: #555; font-weight: bold;">±</span>
+2.89%</span>
+
+</td>
+    </tr>
+                    <tr>
+            <td>league/csv</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td>968.656<span style="color: #555; font-weight: bold;">kb</span>
+</td>
+            <td>580.511<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>600.022<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td>676.376<span style="color: #555; font-weight: bold;">ms</span>
+</td>
+            <td><span style="color: #0c0000">
+    <span style="color: #555; font-weight: bold;">±</span>
+5.52%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <div>
+            <h2>Variant Comparison</h2>
+                                <table class="table table-striped table-bordered table-hover">
+            <caption>Variant Comparison (Time %)</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #1e841e">
+    -41.04%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+                    <table class="table table-striped table-bordered table-hover">
+            <caption>Memory % (Large C.S.V. file (~6.1 Mo))</caption>
+        <thead class="thead-light">
+        <tr>
+                                    <th colspan=3></th>
+                        </tr>
+        <tr>
+                            <th>Library</th>
+                            <th>Variant</th>
+                            <th>Difference</th>
+                    </tr>
+    </thead>
+    <tbody>
+                    <tr>
+            <td>inwebo/csv-reader</td>
+            <td>Large C.S.V. file (~6.1 Mo)</td>
+            <td><span style="color: #275f27">
+    -23.42%</span>
+
+</td>
+    </tr>
+            </tbody>
+</table>
+            </div>
+            </div>
+          </div>
+                          </div>
+    </div>
+            </div>
+    </body>
+    <footer>
+        <center>
+        Generated by <a href="https://github.com/phpbench/phpbench">PHPBench</a>
+        </center>
+    </footer>
+    <script type="text/javascript">
+    /**
+     * Resize Plots when tab is activated
+     */
+    (function () {
+        var tabEls = document.querySelectorAll('button[data-bs-toggle="tab"]')
+        tabEls.forEach(function (tabEl) {
+            tabEl.addEventListener('shown.bs.tab', function (event) {
+console.log(event);
+                var docs = event.target.parentNode.parentNode.parentNode.querySelectorAll('.tab-pane.active .js-plotly-plot');
+                docs.forEach(function (plotEl) {
+                    Plotly.relayout(plotEl, {autosize: true});
+                });
+            });
+        });
+    })();
+    </script>
+</html>
