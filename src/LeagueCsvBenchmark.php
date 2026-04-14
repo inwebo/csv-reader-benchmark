@@ -22,6 +22,7 @@ class LeagueCsvBenchmark extends AbstractCsvBench
     // ── S1 — Basic read ───────────────────────────────────────────────────────
 
     #[Bench\ParamProviders('provideFiles')]
+    #[Bench\Subject('Read CSV File')]
     public function benchBasicRead(): void
     {
         $csv = LeagueCsvReader::from($this->file);
@@ -33,6 +34,7 @@ class LeagueCsvBenchmark extends AbstractCsvBench
     // ── S2 — Filtering: status === 'active' AND age > 30 ─────────────────────
 
     #[Bench\ParamProviders('provideFiles')]
+    #[Bench\Subject('Filter CSV File')]
     public function benchFiltering(): void
     {
         $csv  = LeagueCsvReader::from($this->file);
@@ -48,6 +50,7 @@ class LeagueCsvBenchmark extends AbstractCsvBench
     // ── S3 — Normalization: trim + cast age(int) + score(float) ──────────────
 
     #[Bench\ParamProviders('provideFiles')]
+    #[Bench\Subject('Normalize CSV File')]
     public function benchNormalization(): void
     {
         $csv = LeagueCsvReader::from($this->file);
@@ -63,6 +66,7 @@ class LeagueCsvBenchmark extends AbstractCsvBench
     // ── S4 — Large file: memory stress, 100 000 rows only ────────────────────
 
     #[Bench\ParamProviders('provideLargeFile')]
+    #[Bench\Subject('Read large CSV File')]
     public function benchLargeFile(): void
     {
         $csv = LeagueCsvReader::from($this->file);

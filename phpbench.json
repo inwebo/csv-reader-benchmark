@@ -5,8 +5,8 @@
   "runner.php_config": {
     "memory_limit": "512M"
   },
-  "runner.revs": 1,
-  "runner.iterations": 1,
+  "runner.revs": 10,
+  "runner.iterations": 5,
   "report.generators": {
     "report_plot": {
       "title": "inwebo/csv-reader vs league/csv",
@@ -65,7 +65,7 @@
                     "variant_name"
                   ],
                   "row": {
-                    "Library": "first(partition['benchmark_name'])",
+                    "Library": "if(first(partition['benchmark_name']) = \"InweboCsvReaderBenchmark\", 'inwebo/csv-reader', 'league/csv')",
                     "Variant": "first(partition['variant_name'])",
                     "Peak memory": "first(partition['result_mem_peak']) as memory",
                     "Min time": "min(partition['result_time_avg']) as time",
@@ -88,7 +88,7 @@
                         "variant_name"
                       ],
                       "row": {
-                        "Library": "first(partition['benchmark_name'])",
+                        "Library": "if(first(partition['benchmark_name']) = \"InweboCsvReaderBenchmark\", 'inwebo/csv-reader', 'league/csv')",
                         "Variant": "first(partition['variant_name'])",
                         "Difference": "percent_diff(max(frame['result_time_avg']), min(frame['result_time_avg']))"
                       }
@@ -100,7 +100,7 @@
                         "variant_name"
                       ],
                       "row": {
-                        "Library": "first(partition['benchmark_name'])",
+                        "Library": "if(first(partition['benchmark_name']) = \"InweboCsvReaderBenchmark\", 'inwebo/csv-reader', 'league/csv')",
                         "Variant": "first(frame['variant_name'])",
                         "Difference": "percent_diff(max(partition['result_mem_peak']), first(frame['result_mem_peak']))"
                       }

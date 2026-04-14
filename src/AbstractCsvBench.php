@@ -16,9 +16,9 @@ class AbstractCsvBench
      */
     public function provideFiles(): \Generator
     {
-        yield 'small'  => ['file' => __DIR__ . '/../data/small.csv'];
-        yield 'medium' => ['file' => __DIR__ . '/../data/medium.csv'];
-        yield 'large'  => ['file' => __DIR__ . '/../data/large.csv'];
+        yield 'Small C.S.V. file (~55 ko)'  => ['file' => __DIR__ . '/../data/small.csv'];
+        yield 'Medium C.S.V. file (~584 ko)' => ['file' => __DIR__ . '/../data/medium.csv'];
+        yield 'Large C.S.V. file (~6.1 Mo)'  => ['file' => __DIR__ . '/../data/large.csv'];
     }
 
     /**
@@ -26,6 +26,6 @@ class AbstractCsvBench
      */
     public function provideLargeFile(): \Generator
     {
-        yield 'large' => ['file' => __DIR__ . '/../data/large.csv'];
+        yield 'Large C.S.V. file (~6.1 Mo)' => ['file' => __DIR__ . '/../data/large.csv'];
     }
 }

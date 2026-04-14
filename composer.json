@@ -23,7 +23,7 @@
     "minimum-stability": "stable",
     "scripts": {
       "generate":       "php -d max_execution_time=0 generate.php",
-      "bench":          "php -d max_execution_time=0 vendor/bin/phpbench run --report=report_plot --output=html",
+      "bench":          "php -d max_execution_time=1000 vendor/bin/phpbench run --report=report_plot --output=html",
       "bench:inwebo":   "vendor/bin/phpbench run --filter=InweboCsvReaderBenchmark --report=report_plot --output=html",
       "bench:league":   "vendor/bin/phpbench run --filter=LeagueCsvBenchmark --report=report_plot",
       "bench:store":    "vendor/bin/phpbench run --report=report_plot --store"
